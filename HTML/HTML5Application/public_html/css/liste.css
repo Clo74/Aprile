@@ -1,0 +1,45 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 21-gen-2019, 13.59.23
+    Author     : tss
+*/
+
+/*ol li:nth-child(-2n+6) {
+    color:red;
+    background-color: blue;
+}
+ol li:nth-last-child(-n+6) {
+    color:blue;
+    background-color: red;
+}      */ 
+ol li:nth-child(-n+7):nth-last-child(-n+6) {
+    color:red;
+    background-color: blue;
+}
+
+ol li {
+    cursor: pointer;
+    /*ne limito la dimensione con la width, la scritta all'interno potrebbe 
+    andare in overflow di default vedo il testo volendo lo nascondo */
+    width: 50%;
+    max-width: 200px;
+    min-width: 100px;
+    overflow: hidden;
+    font-weight: bold;
+    font-size: 30px;
+    border: solid 1px red;
+    /*margine esterno al li*/
+    margin: 10px;
+    /*margine interno*/
+    padding: 20px;
+    
+}
+
+ol li:hover {
+    background-color: red;
+    text-align: right;
+}

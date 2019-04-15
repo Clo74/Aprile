@@ -1,0 +1,5 @@
+File di esempio da leggere
+Seconda riga
+Terza riga
+prova di scrittura 
+ dentro un file

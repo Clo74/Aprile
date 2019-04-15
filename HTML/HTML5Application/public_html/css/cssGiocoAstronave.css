@@ -1,0 +1,84 @@
+.contenitore {
+    height: 250px;
+    width: 400px;
+    box-shadow: 5px 5px 5px lightgrey;
+    border-radius: 12px;
+    left: 20px;
+}
+#fDialogo {
+    top:  20px;
+    border: solid 2px blue; 
+    background-color: lightyellow;
+}
+
+.contenitore{
+    position: relative;
+}
+
+.contenitore div {
+    position: absolute;
+    border: inset 2px blue;
+
+    
+}
+.titolo {
+    top: 0px;
+    left: 0px;
+    width: 99%;
+    text-align: center;
+    background-color: blue;
+    color:white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 0px;
+}
+.pOk {
+    top: 50%;
+    left: 5%;
+    width: 100px;
+}
+.pAnnulla {
+    top: 70%;
+    left: 5%;
+    width: 100px;
+}
+
+.direzione {
+    width: 25px;
+    height: 25px;
+    border-radius: 5px 5px 5px;
+    text-align: center;
+    cursor: pointer;
+    line-height: 25px;
+}
+.ovest {
+    top: 50%;
+    left: 55%;
+
+}
+.nord {
+    top: 37%;
+    left: 69%;
+    
+}
+.sud {
+    top: 65%;
+    left: 69%;
+}
+.est {
+    top: 50%;
+    left: 83%;
+}
+
+
+#campoAst {
+    height: 250px;
+    overflow: hidden;
+    background-color: lightblue;
+}
+#astronave {
+    border: dotted 1px red;
+    position: relative;
+    top: 0px;
+    left: 0px;
+}

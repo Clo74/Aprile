@@ -1,0 +1,124 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 21-gen-2019, 14.49.37
+    Author     : tss
+*/
+
+table.scacchiera {
+    border: solid 1px gray;
+    border-collapse: collapse;
+    /*quando ridimensiono la pagina si mette in orizzontale o verticale*/
+    display: inline-block;
+    
+    
+}
+
+table.scacchiera td {
+    border: solid 1px gray;
+    width: 40px;
+    height: 40px;
+    
+}
+/* delle tabelle la classe scacchiera solo la prima che trovo
+di questa il td con la superclasse hover*/
+table.scacchiera:nth-child(1) td:hover {
+    background-color: red;
+    border-radius: 50%;
+}
+table.scacchiera:nth-child(2) td:hover {
+    background-color: blue;
+    /*bordo che si sovrappone alle celle intorno*/
+    outline: solid 2px red;
+}
+
+div#blocco1 {
+    width: 200px;
+    height:80px;
+    border: solid 1px red;
+    background-color: blue;
+    /*arrotondo il bordo dando l'angolo in px */
+    border-radius: 30px;
+    /*primi due parametri spostamento in orizzontale e verticale
+     terzo parametro quanto voglio sfumata l'ombra
+    */
+    box-shadow: 5px -5px 7px grey;
+}
+
+div#blocco2 {
+    width: 150px;
+    height: 150px;
+    border: solid 1px black;
+    margin: 10 px;
+    border-radius: 50%;
+    
+}
+table#forza4 {
+    border: solid 2px blue;
+    border-spacing: 10px;
+    background-color: blue;
+    box-shadow: 5px 5px 7px yellow;
+    
+}
+table#forza4 tr td {
+    width: 40px;
+    height: 40px;
+    border: solid 1px red;
+    background-color: white;
+    border-radius: 50px;
+}
+table#forza4 tr td:nth-child(2n):hover {
+    background-color: red;
+}
+table#forza4 tr td:nth-child(2n+1):hover {
+    background-color: blue;
+}
+
+span.evidenzia {
+    background-color: yellow;
+    font-style: italic;
+    padding: 0px 10px;
+    
+}
+
+span.evidenzia:before {
+    border: solid 1px red;
+    width: 10px;
+    content: '(';
+    /* primo valore alto poi sx sotto dx*/
+    padding: 0px 3px 0px 10px;
+}
+span.evidenzia:after {
+    border: solid 1px red;
+    width: 10px;
+    content: ')';
+    /* primo valore alto poi sx sotto dx*/
+    padding: 0px 10px 0px 3px;
+}
+span.nota {
+    background-color: yellow;
+    font-style: italic;
+    padding: 0px 0px;
+}
+
+span.nota:after {
+    content: '(' attr(num) ')';
+    font-size: 10px;
+    padding: 0px 5px;
+    /*mette in alto a dx*/
+    vertical-align: super;
+    font-style: normal;
+    font-weight: bold;
+}
+
+span.nota:hover:after {
+    color: red;
+    font-weight: normal;
+
+}
+span.nota:hover {
+    text-decoration: underline;
+}

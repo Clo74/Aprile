@@ -1,0 +1,44 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 11-feb-2019, 13.26.16
+    Author     : tss
+*/
+
+div {
+    display:flex;
+    position: fixed;
+    border: solid red;
+    align-items: center; /*allineamento verticale degli elementi contenuti*/
+    justify-content: center; /*allineamento orizzontale*/
+    flex-wrap: wrap; /*permette agli elementi di andare a capo */
+    overflow: hidden;
+    
+}
+#contenitoreTab {
+    top:50px;
+    left:10px;
+    width: 50%;
+    bottom: 10px;
+
+}
+#contenitoreColori {
+    top:50px;
+    left:500px;
+    right: 10px;
+    bottom: 10px;
+
+}
+
+table {
+    border: green inset 1px;
+}
+
+table tr td {
+    border: solid 1px black;
+    height: 30px;
+    width: 30px;
+}

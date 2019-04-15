@@ -1,0 +1,38 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 28-gen-2019, 16.05.13
+    Author     : tss
+*/
+
+a{
+    background-color: white;
+    font-weight: bold;
+    color: black;
+    padding: 0px 10px;
+    text-decoration: none;
+}
+
+/*quando si clicca*/
+a:active{
+    border-radius: 20px;
+    border: solid 1px red;
+}
+
+a:hover{
+    text-decoration: underline overline red;
+    background-color: white;
+    color:red;
+}
+
+/*link già visitati*/
+a:visited{
+    font-style: italic;
+}
+
+a:focus{
+    outline: dashed 3px black;
+}

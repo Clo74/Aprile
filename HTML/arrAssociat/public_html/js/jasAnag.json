@@ -1,0 +1,25 @@
+[{
+        "cognome": "Rossi",
+        "nome": "Luigi",
+        "email": "t.rossi@dkdk.it",
+        "citta":"Milano"
+    },
+    {
+        "cognome": "Bianchi", 
+        "nome": "Mario", 
+        "email": "m.bianchi@dkdk.it",
+        "citta":"Napoli"
+    },
+    {
+        "cognome": "Verdi", 
+        "nome": "Giovanna", 
+        "email": "m.verdi@dkdk.it",
+        "citta":"Torino"
+    },
+    {
+        "cognome": "Gialli", 
+        "nome": "Laura", 
+        "email": "l.gialli@dkdk.it",
+        "citta":"Genova"
+    }]
+

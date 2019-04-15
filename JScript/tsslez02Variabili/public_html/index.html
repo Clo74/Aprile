@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Calcolatrice</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/myscripts.js"></script>
+    </head>
+    <body>
+        <div id="header">
+            TESTATA
+            <br/>
+            <div>Montepremi: <span id="sp_Mont">0</span></div>
+            <br/>
+            <br/>
+        </div>
+        <div id="content" style="background: beige;">
+            <br/>
+            <input id ="in_num1" value="0"><br/>
+            <input id ="in_num2" value="0"><br/>
+            <br/>
+            <br/>
+            <!--this è l'oggetto su cui sono , posso anche, come parametro di una
+            funzione, passare this, nella funzione avrò una variabile oggetto -->
+            <button id="bt_somma" onclick="calcola(this.innerHTML)">+</button>
+            <button id="bt_sott" onclick="calcola('-')">-</button>
+            <button id="bt_moltip" onclick="calcola('*')">*</button>
+            <button id="bt_div" onclick="calcola('/')">/</button><br/>
+            <button id="bt_radice" onclick="calcola('radice')">Radice</button>
+           
+            <br/>
+            <br/>
+            <div id="div_risult">0</div>
+            <br/>
+        </div>
+        <div id="footer">PIE' DI PAGINA</div>
+    </body>
+</html>
+

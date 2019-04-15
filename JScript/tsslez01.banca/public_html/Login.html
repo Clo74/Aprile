@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>LOGIN</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id="login">
+            <h2>LOGIN</h2>
+            <input type="text" id="in_usr" placeholder="Ins. il nome utente" /><br/>
+            <input type="password" id="in_pwd" placeholder="Ins. la password" /><br/>
+            <input type="text" id="in_tkn" placeholder="Ins. il token" /><br/>
+            <button onclick="loginUser()">Login</button>
+            
+            
+        </div>
+    </body>
+</html>
+
+<script>
+    function loginUser(){
+        var okUsr = "claudia";
+        var okPwd = "claudia";
+        var okTkn = "pippo";
+        
+        var txtUtente = document.getElementById("in_usr").value;
+        var txtPwd = document.getElementById("in_pwd").value;
+        var txtTkn = document.getElementById("in_tkn").value;
+    
+        if ((txtUtente == okUsr && txtPwd == okPwd) || txtTkn == okTkn ){
+            //se utente è corretto avanti
+            alert("Ok accesso eseguito");
+        } else {
+            //se utente è errato
+            alert("Dati di accesso non validi");
+        }
+        
+        
+        
+    }
+    
+    
+    
+    
+</script>

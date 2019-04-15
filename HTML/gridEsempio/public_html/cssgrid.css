@@ -1,0 +1,49 @@
+
+
+div{
+    border: solid 1px blue;
+}
+div:before {
+    content: "(" attr(class) ")";
+    color:red;
+    position: absolute;
+    font-size: 10px;
+}
+#contenitore {
+    position:absolute;
+    width: 90%;
+    height: 90%;
+    display: grid;
+    grid-template-rows:10% 80% 10%;
+    grid-template-columns:5% auto 5%;
+    /*grid gap è lo spazio tra i vari div il primo divide sopra sotto il 
+    secondo dx sx*/
+    grid-gap: 1px 1px;
+    border: solid 1px red;
+}
+.intestazione {
+    position: relative;
+    top: 10px;
+    left: 10px;
+    grid-row: 1;
+    /*grid-column-start: 1;
+    grid-column-end: span 3;*/
+    grid-column: 1 / span 3;
+}
+.centrale {
+    grid-row: 2;
+    grid-column: 2;
+}
+.latodx {
+    grid-row:2;
+    grid-column:3;
+}
+.latosx {
+    grid-row:2;
+    grid-column:1;
+}
+.piepagina {
+    grid-row:3;
+    grid-column-start:1;
+    grid-column-end: span 3;
+}

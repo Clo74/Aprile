@@ -1,0 +1,50 @@
+
+/* 
+    Created on : 28-gen-2019, 10.42.45
+    Author     : mymmo74
+*/
+
+body {
+    /*contaDiv me lo invento io*/
+    /*con il reset, qualunque valore aveva lo imposto io*/
+    counter-reset: contaDiv 0;
+}
+div {
+    /*con increment aggiungo al contatore il valore indicato da me*/
+    counter-increment: contaDiv 1;
+}
+
+/*solo con i pseudo-elementi after o before posso scrivere*/
+div:after{
+    /*indicando il parametro upper-roman al posto dei numeri compaiono 
+    i numeri maiuscoli romani*/
+    /*content: '[' counter(contaDiv,upper-roman) ']';*/
+    content: '[' counter(contaDiv,lower-greek) ']';
+}
+
+div:before{
+    /*per concatenare le varie parti basta lo spazio*/
+    /*nella funzione counter gli passo il parametro contaDiv*/
+    /*indicando lower-alpha al posto dei numeri si usano le 
+    lettere minuscole*/
+    content: '[' counter(contaDiv,lower-alpha) ']';
+    padding-right: 10px;
+}
+
+table {
+    counter-reset: contaTR 0;
+    counter-reset: contaTD 0;
+    
+}
+
+tr{
+    counter-reset: contaTD 0;
+    counter-increment: contaTR 1;
+}
+
+td{
+    counter-increment: contaTD 1;
+}
+td:after{
+    content: 'riga' counter(contaTR) ', col' counter(contaTD) ;
+}

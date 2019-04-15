@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Claudia Cittadini</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id="div_1" style="font-size: 35px;">... <b>Titolo mancante</b> ...</div>
+        <div>seconda riga....</div>
+        
+        User: <input id="input_testo" placeholder="inserisci testo" type="text" />  
+        
+        <br>
+        
+        <button onclick="impostaTitolo()">Imposta il titolo???!!??</button>
+        <br>
+        <button>registrati</button>
+        
+    </body>
+</html>
+
+<script>
+   
+   
+    function impostaTitolo() {
+        //recupero oggetto input testo
+        var mioObjTesto = document.getElementById("input_testo");
+        //recupero solo il testo 
+        var txin = mioObjTesto.value;
+        //recupero oggetto finale per il testo da far vedere div_1
+        var mioDv1 = document.getElementById("div_1");
+        //assegno al div miodiv1 il testo
+        mioDv1.innerHTML= txin;
+        //pulisco il testo a video
+        mioObjTesto.value = "";
+
+    }
+   
+    
+</script>

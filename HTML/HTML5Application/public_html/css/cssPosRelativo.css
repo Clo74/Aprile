@@ -1,0 +1,43 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 4-feb-2019, 8.49.44
+    Author     : tss
+*/
+
+div {
+    border: solid 1px blue;
+    margin: 5px;
+    height: 30px;
+    width: 400px;
+    left:0;
+    transition: all 3s;
+}
+div:hover {
+    position: relative;
+    left: 50px
+        
+}
+div:nth-child(1){
+    background-color: red;
+}
+div:nth-child(2){
+    background-color: blue;
+}
+div:nth-child(3){
+    background-color: yellow;
+}
+div:nth-child(4){
+    background-color: orangered;
+    position: relative;
+    top: 30px;
+    left: 100px;
+}
+div:nth-child(5){
+    background-color: green;
+    position: relative;
+    
+}

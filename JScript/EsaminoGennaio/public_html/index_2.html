@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>ESAME    </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="JS/jsEs1_2.js"></script>
+        <style>
+            #div_studente {
+                display:block;
+            }
+            #div_voto {
+                display:none;
+            }
+
+        </style>
+        
+    </head>
+    <body>
+        <div>Benvenuto !!</div>
+        <br/>
+        <div id ="div_studente">
+            Nome <input id="in_nome" placeholder="Inserisci il tuo nome" value = "Claudia" />  &nbsp;&nbsp;
+            Cognome <input id="in_cogn" placeholder="Inserisci il tuo cognome" value ="Cittadini" /> 
+            <br/>
+            <br/>
+            <button onclick="scrivHello()" style="color:red">HELLO !! &DDotrahd;</button> &nbsp;&nbsp;
+            <span id="sp_hello"></span>
+        </div>
+        <br/>
+        <br/>
+        <div id ="div_voto">
+            Voto studente <input id="in_voto" placeholder="Inserisci il tuo voto" />  &nbsp;&nbsp;
+            Voto minimo <input id="in_suff" placeholder="Inserisci il voto minimo" /> 
+            <br/>
+            <br/>
+            <button onclick="scrivProm()" style="color:red">Sarai promosso?? &DDotrahd;</button> &nbsp;&nbsp;
+            <span id="sp_prom"></span>
+            <br/>
+            <br/>
+            <button onclick="scrivMaiusc()" style="color:red">TUTTO MAIUSCOLO?? &DDotrahd;</button> &nbsp;&nbsp;
+            <span id="sp_promMasc"></span>
+            <br/>
+            <br/>
+            <button onclick="aggVoto()" style="color:red">Aggiungi voto alla media: &DDotrahd;</button> &nbsp;&nbsp;
+            <span id="sp_media"></span>
+            <br/>
+            <br/>
+            <button onclick="aggStudVoto()" style="color:red">Aggiungi studente e voto: &DDotrahd;</button> &nbsp;&nbsp;
+            <div id="div_elStudVoti"></div>
+            
+        </div>
+    </body>
+</html>

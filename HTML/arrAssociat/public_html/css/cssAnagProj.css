@@ -1,0 +1,21 @@
+table.tabella {
+    border-collapse: collapse;
+    border: solid 1px black;
+}
+
+table.tabella td, table.tabella th{
+    border: solid 1px gray;
+}
+
+table.tabella th {
+    background-color: blue;
+    
+}
+
+ul li:nth-child(1) {
+    color:red;
+}
+
+ul li:nth-child(1) ul li {
+    color:black;
+}

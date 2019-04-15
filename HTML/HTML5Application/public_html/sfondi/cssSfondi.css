@@ -1,0 +1,50 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 18-feb-2019, 8.36.54
+    Author     : tss
+*/
+div#prova {
+    background-image:  url(../immagini/margherita.png), url('../immagini/foglia.png');
+    width:  300px;
+    height: 300px; 
+    border: solid red;
+    background-position: center;
+    background-repeat: repeat ,no-repeat;
+    
+    
+}
+#paesaggio {
+    width: 400px;
+    height: 300px;
+    background-image: url("../immagini/4000p2500.jpg");
+    background-size: cover;
+    margin: auto;
+    position: absolute;
+    top:0px;
+    left:0px;
+}
+body {
+    display: block;
+    /*justify-content: center;*/
+    /*height: 800px;*/
+    
+}
+#lente{
+    width: 200px;
+    height: 200px;
+    background-image: url("../immagini/4000p2500.jpg");
+    background-repeat: no-repeat;
+    background-position: 10px 10px;
+    background-size: 800%;
+    border: solid 1px blue;
+    position: absolute;
+    right:0px;
+    bottom: 0px;
+    
+    
+        
+}

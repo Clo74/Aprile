@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>FORM</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../css/casellaTesto.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <form>
+            <div>
+                <!-- quello che voglio che compaia è bene metterlo in una label e mettere proprieta for con indicato name o id di oggetto a cui mi riferisco-->
+                <label for="cognome">cognome:</label> 
+                <input type ="text" name ="cognome" id="cognome" value="Cittadini" placeholder="scrivi il tuo cognome">
+            </div>
+            <div>
+                <label for="nome">nome:</label> 
+                <input type ="text" name ="nome" id="nome" value="Claudia" placeholder="scrivi il tuo nome" disabled="">
+            </div>             
+            <div>
+                <label for="pw">pwd: </label> 
+                <input type ="password" name ="pw" id="pw" placeholder="scrivi la password" maxlength="6">
+            </div>              
+            <div>
+                <label for="nuoto">nuoto </label> 
+                <input type ="checkbox" name ="nuoto" id="nuoto">
+            </div>
+            <div>
+                <label for="tennis">tennis </label> 
+                <!-- con disabled non mi lascia scriverci-->
+                <input type ="checkbox" name ="tennis" id="tennis"
+                       disabled="disabled">
+            </div>
+                
+            <div>
+                <label for="judo">judo </label> 
+                <!-- se ho checked anche con = "" appare già ceccato -->
+                <input type ="checkbox" name ="judo" id="judo" checked="checked">
+            </div>
+            <div>
+                <label for="sesso_m">maschio </label> 
+                <input type ="radio" name ="sesso" id="sesso_m"
+                       value="m"
+
+                       title="maschio">
+            </div>
+            <div>
+                <label for="sesso_f">femmina </label> 
+                <input type ="radio" name ="sesso" id="sesso_f"
+                       value="f"
+                       title="femmina"
+                       checked = "">
+                       
+            </div>
+            <div>
+                <label for="sede">sede </label> 
+                <select id="sede" name="sede">
+                    <optgroup label="Piemonte">
+                    <option value="sede1">Torino</option>
+                    <option value="sede2" selected="selected">Vercelli</option>
+                    <option value="sede3">Novara</option>
+                    <option value="sede4">Cuneo</option>
+                    </optgroup>
+                    <optgroup label="Lombardia">
+                    <option value="sede5">Milano</option>
+                    <option value="sede6">Mantova</option>
+                    <option value="sede7">bergamo</option>
+                    <option value="sede8">Brescia</option>
+                    </optgroup>
+                </select>
+            </div>  
+            <div>
+                <label for="note">note</label>
+                <textarea id="note" name="note" 
+                          placeholder="scrivi testo"></textarea>
+                
+            </div>
+            <div>
+                <label for="sedi">sede </label> 
+                <select id="sedi" name="sedi" multiple="multiple"
+                        size="10">
+                    <optgroup label="Piemonte">
+                    <option value="sede1">Torino</option>
+                    <option value="sede2" selected="selected">Vercelli</option>
+                    <option value="sede3">Novara</option>
+                    <option value="sede4">Cuneo</option>
+                    </optgroup>
+                    <optgroup label="Lombardia">
+                    <option value="sede5">Milano</option>
+                    <option value="sede6">Mantova</option>
+                    <option value="sede7">bergamo</option>
+                    <option value="sede8">Brescia</option>
+                    </optgroup>
+                </select>
+            </div>                  
+        </form>
+    </body>
+</html>

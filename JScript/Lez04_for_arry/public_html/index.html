@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>DONAZIONI</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/jsForArry.js"></script>
+        <style>
+            td {
+                vertical-align: top;
+            }
+            #miotd {
+                font-size: 24px;                
+            }
+        </style>
+    </head>
+    <body onload = "prepOutput()">
+        <h1>DONAZIONI</h1>
+        
+        <table>
+            <tr>
+                <td>
+                    <input id ="in_Nome" value = "Giovanni" placeholder="Nome del donatore" size="50"/> <br>
+                    <input id ="in_Soldi" value ="1255" placeholder="Donazione" type = "number" size="50"/><br>
+                    <input type="button" value="DONA !!!" onclick="addDonazioni()"/><br>
+                    <input type="button" value="ANNULLA LAST" onclick="undoDon()"/><br>
+                    <input id ="in_Elem" placeholder="ins. elemento da modificare" type = "number" size="50"/><br>
+                    <input type="button" value="Elimina Elemento" onclick="cancella()"/>
+                    <input type="button" value="Modifica Elemento" onclick="modifica()"/><br>
+                    totale donazioni: <span id = "spTot">0</span>
+                    <br>
+                    <br>
+                    <button onclick="cerca()">Trova il donatore</button><br>
+                    <div id = "div_ricerca">---</div>
+                    
+                </td>
+                <td>
+                    <div id ="div_donaz">nessuna donazione
+                        
+                    </div>
+                     
+                </td>
+            </tr>
+        </table>
+        
+    </body>
+</html>

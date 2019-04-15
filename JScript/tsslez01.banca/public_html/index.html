@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>BANCA TSS</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- CAMBIO LO STILE DI TUTTI I BUTTON -->
+        <style>
+
+            button{background: aliceblue;
+                   color: aqua;
+            }
+            #banca {
+                display:none;
+            }
+            #login {
+                display:block;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="login">
+            <h2>LOGIN</h2>
+            <input type="text" id="in_usr" placeholder="Ins. il nome utente" /><br/>
+            <input type="password" id="in_pwd" placeholder="Ins. la password" /><br/>
+            <input type="text" id="in_tkn" placeholder="Ins. il token" onchange="loginUser()"/><br/>
+            <button onclick="loginUser()">Login</button>
+
+
+        </div>
+
+        <div id="banca">
+
+            <div>
+                BANCA TSS utente: 
+                <span id="sp_nome"></span>
+            </div>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <div id="div_nome">
+                Inserisci nome utente 
+                <input id="in_nome" value="" placeholder="nome utente" onchange="scriviUtente()"/> 
+                <button id="bt_confnome" onclick="scriviUtente()">Conferma</button>
+            </div>
+            <br/>
+            <div id="div_saldo">Saldo corrente: <span id="sp_saldo">0</span> € </div>
+            <br/>
+            <div id="div_mov">Array movimenti: <span id="sp_mov">0</span>  </div>
+            <br/>
+            <div class="versamenti">
+                <!--H3 È TITOLO 3 SERVE A RENDERLO EVIDENTE va a capo-->
+                <h3>VERSAMENTI</h3>
+                <!-- placeholder testo da vedere in grigetto quando parte --> 
+                Importo da versare: <input type="text" id ="in_vers" value="" placeholder="inp. da versare" />
+                <button id="bt_versa" onclick="versaImporto()" >versa importo </button>
+            </div>
+            <div class="versamenti">
+                <!--H3 È TITOLO 3 SERVE A RENDERLO EVIDENTE va a capo-->
+                <h3>PRELIEVI</h3>
+                <!-- placeholder testo da vedere in grigetto quando parte --> 
+                Importo da prelevare: <input type="text" id ="in_prev" value="" placeholder="inp. da prelevare" />
+                <button id="bt_prev" onclick="prelevaImporto()" > preleva importo </button>
+            </div>
+            <br/>
+            <br/>
+            <div id ="div_notifiche"> area notifiche: <span id = "sp_notif" >nulla da segnalare</span></div>
+            <div id="div_mov">
+                <h3>MOVIMENTI</h3>
+                <table style="border:solid red">
+                    <tr>
+                        <th>Versamenti</th><th>Prelievi</th>
+                    </tr>
+                    <tr>
+                        <td id="td_vers"></td>
+                        <td id="td_prev"></td>
+
+                    </tr>
+
+                </table>
+
+            </div>
+
+        </div>
+    </body>
+</html>
+
+<script>
+    //parte di codice
+
+    //dichiaro un array generico non è necessario dimensionarlo
+    var arMovimenti = [];
+    //posso dichiararlo anche:
+    //var arPrelievi2 = new Array(12); //non più usato ma diffusissimo,la dimensione non è obbligatoria
+
+    function stpMov() {
+
+        let strMovimenti = "";
+        let numSaldo = 0;
+        let strSegno = "";
+        let numMaxVer = 0;
+        let strColor = "black";
+        
+        for (i = 0; i < arMovimenti.length; i++) {
+            if (arMovimenti[i] >= 0) {
+                strSegno = "+";
+                strColor = "black";
+            } else {
+                strSegno = "";
+                strColor= "red";
+            }
+            
+            if (arMovimenti[i] > numMaxVer)
+                numMaxVer = arMovimenti[i];
+
+            strMovimenti += "</br><b>#" + (i + 1) + "</b> --> <font color = '" + strColor + "'>" + strSegno + arMovimenti[i] + "</font>";
+            numSaldo += arMovimenti[i];
+        }
+
+        strMovimenti += "<br><b>SALDO: </b>" + numSaldo;
+        strMovimenti += "<br><b>MAX VERSAMENTO </b>" + numMaxVer;
+
+        return strMovimenti;
+
+    }
+
+
+    function loginUser() {
+        var okUsr = "claudia";
+        var okPwd = "claudia";
+        var okTkn = "pippo";
+
+        var txtUtente = document.getElementById("in_usr").value;
+        var txtPwd = document.getElementById("in_pwd").value;
+        var txtTkn = document.getElementById("in_tkn").value;
+
+        if ((txtUtente == okUsr && txtPwd == okPwd) || txtTkn == okTkn) {
+            //se utente è corretto avanti
+            alert("Ok accesso eseguito");
+            document.getElementById("banca").style.display = "block";
+            document.getElementById("login").style.display = "none";
+        } else {
+            //se utente è errato
+            alert("Dati di accesso non validi");
+            document.getElementById("banca").style.display = "none";
+        }
+
+
+
+    }
+
+    function versaImporto() {
+
+
+        //prendo l'innerHTML cioè il valore contenuto nello span e lo metto nella variabile saldo_current
+        //sarà un testo perchè l'ho dichiarato testo (potevo dichiararlo numero!!)
+        var txtsaldo_cur = document.getElementById("sp_saldo").innerHTML;
+        //leggo importo da versare l'oggetto è input quindi uso value (è sempre testo!!)
+        var txtimp_vers = document.getElementById("in_vers").value;
+        //li trasformo in numeri usando una classe (libreria) di oggetto esistente
+        var numSaldo_cur = Number.parseFloat(txtsaldo_cur);
+
+        //se in_vers c'è qualcosa che non è un num positivo avverto e non faccio nulla
+        //testo se è NaN not a number
+        if (isNaN(txtimp_vers)) {
+            alert("Non hai scritto un numero -- try again");
+            document.getElementById("in_vers").value = "";
+        } else {
+
+            var numImporto = Number.parseFloat(txtimp_vers);
+
+            if (numImporto > 0) {
+                //sommo i due numeri
+                var numNuovoSaldo = numSaldo_cur + numImporto;
+
+
+                //aggiungo l'importo all'array arMovimenti
+                arMovimenti.push(numImporto);
+
+                //document.getElementById("sp_mov").innerHTML = arMovimenti.toString();
+                document.getElementById("sp_mov").innerHTML = stpMov();
+
+                //assegno alla casella saldo il nuovo saldo
+                document.getElementById("sp_saldo").innerHTML = numNuovoSaldo;
+                //pulisco il campo
+                document.getElementById("in_vers").value = "";
+
+                //riempo tabella
+                var txtVers = document.getElementById("td_vers").innerHTML;
+                //alla variabile assegno quello già contenuto in tabella + il nuovo versamento
+                txtVers = txtVers + "<br/>" + txtimp_vers;
+                document.getElementById("td_vers").innerHTML = txtVers;
+                //ai prelievi metto dei trattini
+                var txtPrel = document.getElementById("td_prev").innerHTML;
+                txtPrel = txtPrel + "<br/> ---";
+                document.getElementById("td_prev").innerHTML = txtPrel;
+
+            } else {
+                alert("Inserire solo numeri positivi -- try again");
+                document.getElementById("in_vers").value = "";
+            }
+        }
+
+    }
+    function prelevaImporto() {
+        //prendo l'innerHTML cioè il valore contenuto nello span e lo metto nella variabile saldo_current
+        //sarà un testo perchè l'ho dichiarato testo (potevo dichiararlo numero!!)
+        var txtsaldo_cur = document.getElementById("sp_saldo").innerHTML;
+        //leggo importo da versare l'oggetto è input quindi uso value (è sempre testo!!)
+        var txtimp_prev = document.getElementById("in_prev").value;
+        //li trasformo in numeri usando una classe (libreria) di oggetto esistente
+        var numSaldo_cur = Number.parseFloat(txtsaldo_cur);
+        var numImporto = Number.parseFloat(txtimp_prev);
+        //sommo i due numeri
+        var numNuovoSaldo = numSaldo_cur - numImporto;
+
+        //aggiungo l'importo all'array arMovimenti al negativo perchè è un prelievo
+        arMovimenti.push(-numImporto);
+        //lo visualizzo sullo span a video
+        //document.getElementById("sp_mov").innerHTML = arMovimenti.toString();
+        //richiamo la funzione stp mov che mi riempie l'array
+        document.getElementById("sp_mov").innerHTML = stpMov();
+
+
+        //assegno alla casella saldo il nuovo saldo
+        document.getElementById("sp_saldo").innerHTML = numNuovoSaldo;
+        //pulisco il campo
+        document.getElementById("in_prev").value = "";
+
+        //riempo tabella
+        var txtPrel = document.getElementById("td_prev").innerHTML;
+        //alla variabile assegno quello già contenuto in tabella + il nuovo versamento
+        txtPrel = txtPrel + "<br/>" + txtimp_prev;
+        document.getElementById("td_prev").innerHTML = txtPrel;
+
+        //ai versamenti metto dei trattini
+        var txtVers = document.getElementById("td_vers").innerHTML;
+        txtVers = txtVers + "<br/> ---";
+        document.getElementById("td_vers").innerHTML = txtVers;
+
+
+    }
+
+    function scriviUtente() {
+
+        var txtNomeUt = document.getElementById("in_nome").value;
+        document.getElementById("sp_nome").innerHTML = txtNomeUt;
+        document.getElementById("sp_nome").style = "color:red";
+        document.getElementById("in_nome").value = "";
+
+    }
+
+
+</script>

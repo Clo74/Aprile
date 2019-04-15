@@ -1,0 +1,139 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 28-gen-2019, 13.35.23
+    Author     : tss
+*/
+
+input {
+    width: 200px;
+    color: red;
+    height: 20px;
+    font-size: 16px;
+    /* padding serve a fare spazio all'interno della casella attorno al testo */
+    padding: 5px 10px;
+    border: solid 1px blue;
+    border-radius: 10px;
+    background-color: yellow;
+    text-transform: uppercase;
+}
+
+input:focus {
+    outline: none;
+    background-color: azure;
+    color:brown;
+       
+}
+input:hover {
+    border: dotted 2px red;
+    
+}
+input::placeholder {
+    color:black;
+    font-weight: normal;
+    font-size: 10px;
+        
+}
+/* con inline-block gli indico che si deve comportare come inlineblock quindi che rispetta una larghezza*/
+label {
+    display: inline-block;
+    width: 150px;
+    /*mette la prima lettera maiuscola e le altre minuscole*/
+    text-transform: capitalize;
+    cursor: pointer;
+}
+/*indico che i div hanno un margine in modo che allontani le caselle (dico solo per i div dentro ai form)*/
+form div {
+    margin: 10px;
+    
+}
+/* se devo dare caratteristiche solo se il valore di una proprietà è uguale a qualcosa*/
+input[type="password"] {
+    background-color: lightgray;
+}
+input[type="checkbox"],
+input[type="radio"]{
+    width: 30px;
+    
+}
+input[type="image"] {
+    width: 100px;
+    height: 100px;
+}
+input[disabled][type="text"]{
+    color:gray;
+}
+select option {
+    text-transform: capitalize;
+    color: red;
+    background-color: lightcoral;
+}
+select option:nth-child(odd) {
+    background-color: lightblue;
+}
+select {
+        color:black;
+        
+}
+/*3em si intende 3 volte i caratteri */
+textarea {
+    width: 200px;
+    height: 3em;
+    border: solid 1px;
+    border-radius: 10px;
+    color:blue;
+    border-color: red;
+    padding: 5px;
+    overflow: auto;
+    white-space: initial;
+}
+#sfondo {
+    display: none;
+    background-color: rgba(30,30,30,.5);
+    position:fixed;
+    left: 5px;
+    top: 5px;
+    right: 5px;
+    bottom: 5px;
+
+}
+#messaggio {
+    width: 200px;
+    height: 100px;
+    position:absolute;
+    background-color: blue;
+    border: 1px black;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 50px;
+    color:red;
+    top: 50%;
+    left: 50%;
+    margin-left: -100px;
+    margin-top: -50px;
+    
+}
+#butOk {
+    position: absolute;
+    left:50%;
+    margin-left: -20px;
+}
+#intesta {
+    position:absolute;
+    left:5px;
+    width: 190px;
+    height: 20px;
+    border-radius: 5px;
+    background-color: white;
+    color:red;
+    line-height: 20px;
+}
+/*div *:nth-child(2) {
+    opacity: .2;
+}
+div *:nth-child(1):hover + * {
+    opacity: 1;
+}*/

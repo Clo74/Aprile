@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>CLAUDIA</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            button{background: aliceblue;
+                   color: red;
+            }
+            #div_Primo {
+                display:block;
+            }
+            #div_Secondo {
+                display:none;
+            }
+
+        </style>
+    </head>
+    <body>
+        <br/>
+        <div id="div_Primo">
+            <input id = "in_Nome" onchange="visPagina()" /> scrivi il tuo nome
+        </div>
+        <div id = "div_Secondo">
+            TENTA LA FORTUNA 
+            <br/>
+            <br/>
+            <span id="sp_Result" style="color:red; align-items: center" ></span><br/>
+            <br/>
+            <br/>
+            <br/>
+            <span id ="sp_Primo">??</span>
+            <span id ="sp_Secondo">??</span>
+            <span id ="sp_Terzo">??</span>
+            <br/>
+            <br/>
+            <br/>
+            <button onclick = "tentaFort()">TRY</button>
+            Schiaccia il bottone e tenta la fortuna <br/> 
+        </div>        
+        <div>
+
+
+        </div>    </body>
+</html>
+<script>
+    var stNomeUt;
+
+    function visPagina() {
+        stNomeUt = document.getElementById("in_Nome").value;
+        if (stNomeUt.length > 0) {
+            document.getElementById("div_Primo").style.display = "none";
+            document.getElementById("div_Secondo").style.display = "block";
+            document.getElementById("sp_Result").innerHTML = "BENVENUTO " + stNomeUt;
+        }
+    }
+    function tentaFort() {
+
+
+        var numPr = Math.floor(Math.random() * 3);
+        var numSec = Math.floor(Math.random() * 3);
+        var numTer = Math.floor(Math.random() * 3);
+
+        document.getElementById("sp_Primo").innerHTML = numPr;
+        document.getElementById("sp_Secondo").innerHTML = numSec;
+        document.getElementById("sp_Terzo").innerHTML = numTer;
+
+
+        if (numPr == numSec && numPr == numTer) {
+            document.getElementById("sp_Result").innerHTML = stNomeUt + "   HAI VINTO!!";
+            document.getElementById("sp_Result").style = "color:Red";
+        } else {
+            document.getElementById("sp_Result").innerHTML = stNomeUt + "   NON HAI VINTO!!";
+            document.getElementById("sp_Result").style = "color:Green";
+
+        }
+
+
+    }
+
+</script>
