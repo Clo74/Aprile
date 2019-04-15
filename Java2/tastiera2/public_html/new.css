@@ -1,0 +1,7 @@
+.classTab tr td {
+    border: solid 1px red;
+    border-collapse: collapse;
+    width: 20px;
+    height: 20px;
+}
+
