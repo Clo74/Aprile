@@ -7,11 +7,12 @@ package principale.services;
 
 import java.net.URI;
 import java.util.List;
-import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.container.ResourceContext;
@@ -28,21 +29,21 @@ import principale.entity.Prodotto;
  */
 @Path("/prodotti")
 public class ProdottiResource {
-    
+
     @Inject
     ProdottoStore store;
-    
+
     @Inject
     ProdottoResource resource;
-    
+
     @Context
     ResourceContext rc;
-    
+
     @GET
-    public List<Prodotto> findAllR(){
+    public List<Prodotto> findAllR() {
         return store.findAll();
     }
-    
+
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public Response create(Prodotto a, @Context UriInfo uriInfo) {
@@ -53,13 +54,30 @@ public class ProdottiResource {
         return Response.ok(uri).build();
     }
     
+    @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
     @Path("{id}")
-    public ProdottoResource find(@PathParam("id") int id){
-        resource = rc.getResource(ProdottoResource.class);
-        resource.setId(id);
-        return resource;
+    public void update(Prodotto n,@PathParam("id") Integer id ) {
+        n.setId(id);
+        store.update(n);
     }
 
+    @DELETE
+    @Path("{id}")
+    public void delete(@PathParam("id") Integer id) {
+        store.delete(id);
+    }
 
-    
+//    @Path("{id}")
+//    public ProdottoResource find(@PathParam("id") int id) {
+//        resource = rc.getResource(ProdottoResource.class);
+//        resource.setId(id);
+//        return resource;
+//    }
+
+    @GET
+    @Path("{id}")
+    public Prodotto findR(@PathParam("id") int id) {
+        return store.find(id);
+    }
 }

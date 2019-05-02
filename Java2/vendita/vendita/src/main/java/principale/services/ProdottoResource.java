@@ -5,7 +5,6 @@
  */
 package principale.services;
 
-import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.ws.rs.GET;
 import principale.business.ProdottoStore;

@@ -9,6 +9,7 @@ import java.net.URI;
 import java.util.List;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
@@ -61,4 +62,9 @@ public class NegoziResource {
         store.update(n);
     }
     
+    @DELETE
+    @Path("{id}")
+    public void delete(@PathParam("id") Integer id) {
+        store.delete(id);
+    }
 }
