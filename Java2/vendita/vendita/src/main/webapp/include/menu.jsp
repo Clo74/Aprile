@@ -13,8 +13,8 @@
             <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
                 <a href="#" id="menuLink1" class="pure-menu-link">Gestione</a>
                 <ul class="pure-menu-children">
-                    <li class="pure-menu-item"><a href="#" class="pure-menu-link">Prodotti</a></li>
-                    <li class="pure-menu-item"><a href="#" class="pure-menu-link">Esperienze</a></li>
+                    <li class="pure-menu-item"><a href="${pageContext.request.contextPath}/scontrini.jsp" class="pure-menu-link">Scontrini</a></li>
+                    <li class="pure-menu-item"><a href="#" class="pure-menu-link">Libero</a></li>
                 </ul>
             </li>
             <li class="pure-menu-item pure-menu-selected"><a href="${pageContext.request.contextPath}/login.jsp" class="pure-menu-link">Login</a></li>

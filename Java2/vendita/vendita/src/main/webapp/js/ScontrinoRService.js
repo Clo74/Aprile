@@ -1,10 +1,10 @@
 import AbstractService from "./AbstractService.js";
 
-export default class ScontrinoTService extends AbstractService {
+export default class ScontrinoRService extends AbstractService {
         
         constructor(){
             super();
-            this.url = this.baseUrl + "/scontriniT"        
+            this.url = this.baseUrl + "/scontriniR/1"        
         }
         
     async all() {

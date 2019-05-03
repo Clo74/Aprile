@@ -6,7 +6,7 @@ import javax.persistence.metamodel.StaticMetamodel;
 import principale.entity.Prodotto;
 import principale.entity.ScontrinoT;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2019-05-02T16:51:14")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2019-05-03T14:32:27")
 @StaticMetamodel(ScontrinoR.class)
 public class ScontrinoR_ { 
 

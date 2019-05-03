@@ -1,7 +1,7 @@
 import {render, html} from "../node_modules/lit-html/lit-html.js"
         /**
          * --properties--
-         * data
+         * json
          * service
          * contenitore
          * id
@@ -14,7 +14,15 @@ import {render, html} from "../node_modules/lit-html/lit-html.js"
     constructor(properties) {
         this.prop = properties;
         this.bindings();
-        this.loadData();
+        if (this.prop.service) {
+            this.loadData();
+        } else {
+            this.data = this.prop.json
+            this.readFields();
+            this.el = document.querySelector(this.prop.contenitore);
+            render(this._createTab(), this.el);
+        }
+
 
     }
     bindings() {
@@ -33,7 +41,7 @@ import {render, html} from "../node_modules/lit-html/lit-html.js"
     }
 
     readFields() {
-        const [first] = this.data;
+        const first = this.data[0];
         this.fields = Reflect.ownKeys(first);
     }
 
